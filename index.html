@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day Laxmi</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffdde1, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 42px;
+  color: #c9184a;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 35px;
+  font-size: 20px;
+  border: none;
+  border-radius: 40px;
+  background-color: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e63950;
+}
+
+#quote {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #333;
+  display: none;
+  max-width: 400px;
+}
+
+.petal {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Happy Rose Day Laxmi 🌹</h1>
+  <button onclick="startMagic()">PRESS</button>
+
+  <div id="quote">
+    🌸<br><br>
+    Sometimes life breaks us not to hurt us,  
+    but to remind us how strong we really are.  
+    <br><br>
+    You don’t need to look back to prove anything.  
+    Your heart deserves peace, love, and a future  
+    that makes you smile without trying.  
+    <br><br>
+    <b>Choose yourself… always.</b> 💖
+  </div>
+</div>
+
+<script>
+function startMagic() {
+  document.getElementById("quote").style.display = "block";
+
+  for (let i = 0; i < 40; i++) {
+    let petal = document.createElement("div");
+    petal.classList.add("petal");
+    petal.innerHTML = "🌹";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+      petal.remove();
+    }, 7000);
+  }
+}
+</script>
+
+</body>
+</html>
